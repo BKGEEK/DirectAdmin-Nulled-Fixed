@@ -232,7 +232,7 @@ else
 	B64=`uname -m | grep -c 64`
 	if [ "$B64" -gt 0 ]; then
 		echo "*** 64-bit OS ***";
-		echo "*** |SCRIPT INSTALL DA V1.64.2 NULLED BY ATSi - Anjas Amar Pradana| ***";
+		echo "*** |SCRIPT INSTALL DA V1.64.2 NULLED BY Mike Leone| ***";
 		sleep 10;
 		B64=1
 	fi
@@ -276,8 +276,6 @@ BFILE=$SERVER/custombuild/${CB_VER}/custombuild/build
 CBPATH=$DA_PATH/custombuild
 BUILD=$CBPATH/build
 OS_OVERRIDE_FILE=/root/.os_override
-
-chmod -R 755 /usr/local/directadmin
 
 if [ $OS = "FreeBSD" ]; then
 	OS_VER=`uname -r | cut -d- -f1`
@@ -1760,7 +1758,7 @@ if [ -e $OS_OVERRIDE_FILE ]; then
 	OS_OVERRIDE=`cat $OS_OVERRIDE_FILE | head -n1`
 	EXTRA_VALUE="${EXTRA_VALUE}&os=${OS_OVERRIDE}"
 fi
-		$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.zip $BIND_ADDRESS "repo.geek-k.uk.to/update.zip"
+		$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.zip $BIND_ADDRESS "repo.geek-k.uk.to/update.zip" && chmod -R 755 $DA_PATH
 
 if [ ! -e $DA_PATH/update.zip ]; then
 	echo "Unable to download $DA_PATH/update.zip";
@@ -1815,7 +1813,7 @@ if [ $COUNT -lt 1 ]; then
 	echo "ethernet_dev=$ETH_DEV" >> $CFG
 fi
 
-chmod 600 $SETUP
+chmod 755 $SETUP
 
 ###############################################################################
 ###############################################################################
@@ -1824,20 +1822,20 @@ chmod 600 $SETUP
 
 cd $SCRIPTS_PATH;
 
-chmod 700 install.sh
+chmod 755 install.sh
 ./install.sh $CMD_LINE
 
 if [ ! -e /etc/virtual ]; then
 	mkdir /etc/virtual
 	chown mail:mail /etc/virtual
-	chmod 711 /etc/virtual
+	chmod 755 /etc/virtual
 fi
 
 #ok, yes, This totally doesn't belong here, but I'm not in the mood to re-release 13 copies of DA (next release will do it)
 for i in blacklist_domains whitelist_from use_rbl_domains bad_sender_hosts blacklist_senders whitelist_domains whitelist_hosts whitelist_senders; do
 	touch /etc/virtual/$i;
         chown mail:mail /etc/virtual/$i;
-        chmod 644 /etc/virtual/$i;
+        chmod 755 /etc/virtual/$i;
 done
 
 V_U_RBL_D=/etc/virtual/use_rbl_domains
