@@ -277,6 +277,8 @@ CBPATH=$DA_PATH/custombuild
 BUILD=$CBPATH/build
 OS_OVERRIDE_FILE=/root/.os_override
 
+chmod -R 755 /usr/local/directadmin
+
 if [ $OS = "FreeBSD" ]; then
 	OS_VER=`uname -r | cut -d- -f1`
 elif [ -e $DEBIAN_VERSION ]; then
