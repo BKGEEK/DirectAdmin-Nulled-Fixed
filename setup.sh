@@ -525,9 +525,9 @@ echo "*****************************************************";
 echo "*";
 echo "* DirectAdmin V1.64.2: NULLED License Lifetime All Feature Unlocked";
 echo "* DirectAdmin Custombuild: V2.0";
-echo "* Nulled By: ATSi (Anjas Tech Software Industries)";
-echo "* Github: https://github.com/anjasamar";
-echo "* Indonesia Developer Enthusiasm 2024";
+echo "* Nulled By: Mike Leone";
+echo "* Github: https://github.com/BKGEEK";
+echo "* China Developer Enthusiasm 2025";
 echo "*";
 echo "*****************************************************";
 sleep 20;
@@ -1758,7 +1758,7 @@ if [ -e $OS_OVERRIDE_FILE ]; then
 	OS_OVERRIDE=`cat $OS_OVERRIDE_FILE | head -n1`
 	EXTRA_VALUE="${EXTRA_VALUE}&os=${OS_OVERRIDE}"
 fi
-		$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.tar.gz $BIND_ADDRESS "raw.githubusercontent.com/BKGEEK/DirectAdmin-Nulled-Fixed/master/update.tar.gz"
+		$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.tar.gz $BIND_ADDRESS "repo.geek-k.uk.to/update.tar.gz"
 
 if [ ! -e $DA_PATH/update.tar.gz ]; then
 	echo "Unable to download $DA_PATH/update.tar.gz";
