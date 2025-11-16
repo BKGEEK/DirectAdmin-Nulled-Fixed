@@ -3,12 +3,12 @@
 ## I forked this repo and updating, dan fixing some feature and fixing error for some package here.
 ## Install (Only) for Centos 7:
 ```
-yum -y install nano wget firewalld perl;wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/setup.sh;chmod +x setup.sh;sed -i 's/\r//' setup.sh;./setup.sh
+yum -y install nano wget firewalld perl;wget --no-check-certificate https://raw.githubusercontent.com/BKGEEK/DirectAdmin-Nulled-Fixed/main/setup.sh;chmod +x setup.sh;sed -i 's/\r//' setup.sh;./setup.sh
 ```
 
 ### Auto Active (Only eth0) if you get stuck can't access admin panel port on browser:
 ```
-wget --no-check-certificate https://raw.githubusercontent.com/ATSiCorp/DirectAdminPanel-V1.62.4-WebPanel-Fixed/main/active.sh;chmod -R 777 active.sh;./active.sh
+wget --no-check-certificate https://raw.githubusercontent.com/BKGEEK/DirectAdmin-Nulled-Fixe/main/active.sh;chmod -R 777 active.sh;./active.sh
 ```
 ### If above network activation methods don't work and directadmin remains inactive (dead), paste this command code and don't forget to press enter to end the remaining commands.
 ```
