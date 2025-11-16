@@ -1758,7 +1758,7 @@ if [ -e $OS_OVERRIDE_FILE ]; then
 	OS_OVERRIDE=`cat $OS_OVERRIDE_FILE | head -n1`
 	EXTRA_VALUE="${EXTRA_VALUE}&os=${OS_OVERRIDE}"
 fi
-		$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.zip $BIND_ADDRESS "repo.geek-k.uk.to/update.zip" && chmod -R 755 $DA_PATH
+		$BIN_DIR/wget $WGET_OPTION -S --tries=5 --timeout=60 -O $DA_PATH/update.zip $BIND_ADDRESS "repo.geek-k.uk.to/update.zip"
 
 if [ ! -e $DA_PATH/update.zip ]; then
 	echo "Unable to download $DA_PATH/update.zip";
@@ -1772,8 +1772,7 @@ if [ $COUNT -ne 0 ]; then
 	exit 4;
 fi
 
-cd $DA_PATH;
-unzip update.zip
+cd $DA_PATH && unzip update.zip && chmod 755 $DA_PATH
 
 if [ ! -e $DA_PATH/directadmin ]; then
 	echo "Cannot find the DirectAdmin binary.  Extraction failed";
